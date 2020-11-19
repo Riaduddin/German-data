@@ -12,7 +12,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import matplotlib.pyplot as plt
 nlp=spacy.load('en')
 
-vectorizer_file=open('/content/vectorizer.pkl','rb')
+vectorizer_file=open('vectorizer.pkl','rb')
 vec=joblib.load(vectorizer_file)
 
 st.title('News_Classifier ML App')
@@ -32,7 +32,7 @@ if choice=='News_Classifier':
         value=a
     return value
   if model_choice=='NN':
-    model=tf.keras.models.load_model('/content/tfmodel.h5')
+    model=tf.keras.models.load_model('tfmodel.h5')
     with open('/content/tokenizer.pickle','rb') as handle:
       vec=pickle.load(handle)
     def predictions(model,texts):
