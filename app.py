@@ -29,7 +29,6 @@ if choice=='News_Classifier':
     json_file.close()
     loaded_model = model_from_json(loaded_model_json)
     loaded_model.load_weights("model.h5")
-    model.load_weights('model.index')
     with open('tokenizer.pickle','rb') as handle:
       vec=pickle.load(handle)
     def predictions(model,texts):
