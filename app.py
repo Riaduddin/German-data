@@ -5,6 +5,7 @@ import tensorflow as tf
 import pandas as pd
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import model_from_json
 import matplotlib.pyplot as plt
 st.title('News_Classifier ML App')
 st.subheader('NLP and ML App with Streamlit')
