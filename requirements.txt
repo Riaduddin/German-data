@@ -3,5 +3,6 @@ numpy>=1.18.5
 matplotlib>=3.2.2
 tensorflow==2.0.0
 h5py==2.10.0
+wordcloud==1.5.0
 scikit-learn==0.22.1
 streamlit
