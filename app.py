@@ -22,23 +22,12 @@ if choice=='News_Classifier':
       if b==val:
         value=a
     return value
-  def create_model():
-    model=tf.keras.Sequential()
-    model.add(Embedding(2000,16,input_length=240))
-    model.add(GlobalAveragePooling1D())
-    model.add(Dense(108))
-    model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(.5))
-    model.add(Dense(48))
-    model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(.5))
-    model.add(Dense(5,activation='softmax'))
-    return model
- 
   if model_choice=='NN':
-    model=create_model
+    json_file = open('model.json', 'r')
+    loaded_model_json = json_file.read()
+    json_file.close()
+    loaded_model = model_from_json(loaded_model_json)
+    loaded_model.load_weights("model.h5")
     model.load_weights('model.index')
     with open('tokenizer.pickle','rb') as handle:
       vec=pickle.load(handle)
