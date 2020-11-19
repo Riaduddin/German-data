@@ -41,5 +41,5 @@ if choice=='News_Classifier':
     if news_text is None:
       st.text('Provide your news')
     else:
-      predictions=predictions(model,news_text)
+      predictions=predictions(loaded_model,news_text)
       st.success('News Categorized as {}'.format(predictions))
