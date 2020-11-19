@@ -43,3 +43,8 @@ if choice=='News_Classifier':
     else:
       predictions=predictions(loaded_model,news_text)
       st.success('News Categorized as {}'.format(predictions))
+    if st.checkbox('WordCloud'):
+      fig, ax = plt.subplots(figsize=(20,20))
+      wordcloud=WordCloud().generate(news_text)
+      plt.imshow(wordcloud)
+      st.pyplot(fig)
