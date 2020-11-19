@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import joblib,os
+import joblib
 import spacy
 import pickle
 import tensorflow as tf
@@ -33,7 +33,7 @@ if choice=='News_Classifier':
     return value
   if model_choice=='NN':
     model=tf.keras.models.load_model('tfmodel.h5')
-    with open('/content/tokenizer.pickle','rb') as handle:
+    with open('tokenizer.pickle','rb') as handle:
       vec=pickle.load(handle)
     def predictions(model,texts):
       data=vec.texts_to_sequences([texts])
