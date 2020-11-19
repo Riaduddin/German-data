@@ -1,16 +1,11 @@
 import streamlit as st
 import numpy as np
-import joblib
 import pickle
 import tensorflow as tf
 import pandas as pd
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import matplotlib.pyplot as plt
-
-vectorizer_file=open('vectorizer.pkl','rb')
-vec=joblib.load(vectorizer_file)
-
 st.title('News_Classifier ML App')
 st.subheader('NLP and ML App with Streamlit')
 activites=['News_Classifier']
@@ -28,8 +23,8 @@ if choice=='News_Classifier':
         value=a
     return value
   if model_choice=='NN':
-    model=tf.keras.models.load_model('tfmodel_1.h5')
-    with open('tokenizer.pickle','rb') as handle:
+    model=tf.keras.models.load_model('/content/tfmodel_1.h5')
+    with open('/content/tokenizer.pickle','rb') as handle:
       vec=pickle.load(handle)
     def predictions(model,texts):
       data=vec.texts_to_sequences([texts])
