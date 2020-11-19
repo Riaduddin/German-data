@@ -28,7 +28,7 @@ if choice=='News_Classifier':
         value=a
     return value
   if model_choice=='NN':
-    model=tf.keras.models.load_model('tfmodel.h5')
+    model=tf.keras.models.load_model('tfmodel_1.h5')
     with open('tokenizer.pickle','rb') as handle:
       vec=pickle.load(handle)
     def predictions(model,texts):
